@@ -1,0 +1,46 @@
+/*×ÖÌå*/
+.font-a{
+    font-size: 30px;
+    font-weight: bold;
+    padding-right: 4px;
+    position: relative;
+    top: 0px;
+}
+
+
+
+.s_24{
+    font-size: 24px;
+
+}
+.s_24 *{
+    font-size: 24px;
+    line-height: 180%;
+
+}
+.s_20{
+    font-size: 18px;
+
+}
+.s_20 *{
+    font-size: 18px;
+    line-height: 180%;
+
+}
+.s_16{
+    font-size: 16px;
+
+
+}
+.s_16 *{
+    font-size: 16px;
+    line-height: 180%;
+
+}
+.s_14{
+    font-size: 14px;
+}
+.s_14 *{
+    font-size: 14px;
+    line-height: 180%;
+}

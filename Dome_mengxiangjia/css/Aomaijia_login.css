@@ -1,0 +1,342 @@
+*{
+margin:0;
+padding:0;
+}
+ul li{
+list-style:none;
+}
+a{
+text-decoration:none;
+}
+.head{
+width:100%;
+height:90px;
+}
+.head>img{
+display:block;
+float:left;
+width:276px;
+height: 44px;
+margin:30px 0 0 138px;
+}
+.head>span{
+display:block;
+float:left;
+width:100px;
+height: 30px;
+color: #666;
+font-size: 22px;
+margin: 40px 0 0 8px;
+border-left: solid #e4e4e4 1px;
+font-family:"Microsoft Yahei", "Helvetica Neue", Helvetica, Arial, "Hiragino Sans GB", tahoma, SimSun, sans-serif;
+}
+.head .head_reg{
+height:14px;
+width:180px;
+float:right;
+margin:50px 140px 0 0;
+}
+.head .head_reg>div{
+float:left;
+color:#333;
+line-height:14px;
+font-size:12px;
+margin-left:3px;
+}
+.head .head_reg .head_reg_r{
+color:#999999;
+}
+/*middle*/
+
+.middle{
+position:relative;
+width:100%;
+height: 480px;
+background:url(../images/login/reg_01.jpeg)no-repeat -330px 0;
+}
+.footer{
+width:100%;
+text-align:center;
+color:#999;
+font-size:12px;
+padding:35px 0 5px;
+}
+.footer a{
+color: #999;
+}
+.footer a:hover{
+text-decoration:underline;
+}
+.footer p{
+padding-top:10px;
+}
+.middle .login{
+width:350px;
+height: 430px;
+overflow:hidden;
+background-color:#fff;
+position:absolute;
+top:20px;
+left:766px;
+}
+.login .login_hd{
+width:350px;
+position:relative;
+height: 54px;
+border-bottom: solid #e4e4e4 1px;
+}
+.login .login_hd>i{
+display:block;
+position:absolute;
+top:53px;
+left:50px;
+height: 2px;
+width:80px;
+background-color:#F03468;
+}
+.login .login_hd>span{
+width:175px;
+height: 21px;
+margin-top:20px;
+text-align:center;
+display:block;
+float:left;
+font-size:16px;
+font-family: "Microsoft Yahei","Helvetica Neue",Helvetica,Arial,"Hiragino Sans GB",tahoma,SimSun,sans-serif;
+}
+.login .login_cen{
+position:relative;
+width:350px;
+height: 307px;
+/*background-color:pink;*/
+}
+.login_cen .txt_box{
+float:left;
+width:316px;
+height: 40px;
+margin:0 17px;
+border:1px solid #E5E5E5;
+margin-top:25px;
+position:relative;
+}
+.login_cen .txt_box3{
+float:left;
+width:316px;
+height: 40px;
+margin:22px 17px;
+border:1px solid #E5E5E5;
+position:relative;
+}
+/*验证错误提示 账号登入*/
+
+.login_cen .displace1{
+position:absolute;
+font-size:12px;
+color:#F03468;
+bottom:-20px;
+left:0;
+display:none;
+}
+.login_cen .displace2{
+position:absolute;
+font-size:12px;
+color:#F03468;
+bottom:-20px;
+left:0;
+display:none;
+}
+.login_cen .displace3{
+position:absolute;
+font-size:12px;
+color:#F03468;
+bottom:-20px;
+left:0;
+display:none;
+}
+.login_cen i{
+display:inline-block;
+font-style:normal;
+font-weight:600;
+background-color:#F03468;
+border:1px solid #F03468;
+border-radius:50%;
+color:#fff;
+width:12px;
+height: 12px;
+text-align:center;
+}
+
+/*验证错误提示 手机动态登录*/
+.txt_box .displ_1{
+position:absolute;
+font-size:12px;
+color:#F03468;
+bottom:-20px;
+left:0;
+display:none;
+}
+.txt_box .displ_2{
+ position:absolute;
+ font-size:12px;
+ color:#F03468;
+ bottom:-20px;
+ left:0;
+ display:none;
+ }
+.txt_box3 .displ_3{
+position:absolute;
+font-size:12px;
+color:#F03468;
+bottom:-20px;
+left:0;
+display:none;
+}
+.login_cen .txt_add1{
+border:1px solid #F03468;
+}
+
+.login_cen .txt_box>span{
+display:block;
+width:40px;
+height: 40px;
+float:left;
+}
+.login_cen .txt_box>span img{
+width:40px;
+height: 40px;
+}
+.login_cen .txt_box>input{
+display:block;
+float:left;
+width:276px;
+height: 40px;
+border:none;
+}
+
+.login_cen .txt_box3>span{
+display:block;
+width:40px;
+height: 40px;
+float:left;
+}
+.login_cen .txt_box3>span img{
+width:40px;
+height: 40px;
+}
+.login_cen .txt_box3>input{
+display:block;
+float:left;
+width:122px;
+height: 40px;
+border:none;
+}
+.login_cen .txt_box3>button{
+width:154px;
+height: 40px;
+border:none;
+color:#999;
+}
+.login_cen .txt_box4{
+float:left;
+width:316px;
+height: 14px;
+margin:15px 17px;
+font-size:12px;
+}
+.login_cen .txt_box4>input{
+display:block;
+float:left;
+}
+.login_cen .txt_box4>span{
+display:block;
+margin-left:3px;
+height: 14px;
+float:left;
+color:#999;
+}
+.login_cen .txt_box4>p{
+float:right;
+}
+.login_cen .txt_box5{
+float:left;
+width:316px;
+height: 40px;
+margin:0 17px;
+}
+.login_cen .txt_box5>button{
+width:316px;
+height: 38px;
+line-height:38px;
+font-size:18px;
+text-align:center;
+color:#fff;
+background-color:#F03468;
+border:none;
+border-radius:3px;
+}
+
+/*ul li*/
+.login ul{
+width:700px;
+position:absolute;
+}
+.login ul li input{
+text-indent:10px;
+}
+.login ul li{
+display:inline-block;
+float:left;
+}
+.login .login_ul .txt_t{
+float:left;
+width:316px;
+height: 32px;
+margin:0 17px;
+font-size:12px;
+color:#333333;
+margin-top:22px;
+}
+.login .login_ul .txt_t>a{
+color:#F03468;
+}
+.login .login_ul .txt_boxf{
+margin:26px 17px;
+}
+.txt_btn{
+background-color:#FFBA00;
+color:#fff;
+}
+
+/*底部*/
+.login .ftr{
+padding:10px 0 10px 20px;
+color:#999;
+position:absolute;
+left:0;
+bottom:0;
+}
+.login .ftr>p{
+font-size:12px;
+margin-bottom:5px;
+}
+.login .ftr .poto{
+width:330px;
+height: 32px;
+}
+.login .ftr .poto>span{
+display:block;
+float:left;
+width:28px;
+height:29px;
+margin:0 3px;
+}
+/*用hover：实现移入变色效果*/
+.login .ftr .poto>span:hover{
+color:#7ee3db;
+}
+.login .ftr .poto span img{
+width:28px;
+height:29px;
+}
+
+

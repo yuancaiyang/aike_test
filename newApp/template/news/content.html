@@ -1,0 +1,37 @@
+
+
+<ion-view title="新闻详情">
+
+
+
+    <ion-content class="padding">
+
+
+        <ion-spinner ng-if="hasLoading" icon="ios" style="width: 60px; height: 60px; margin:40px auto; text-align: center;display: block;">
+
+        </ion-spinner>
+
+        <div ng-if="!hasLoading">
+
+            <h2>{{item.title}}</h2>
+
+            <div class="news_content {{c_size}}" ng-bind-html="item.content">
+
+            </div>
+
+        </div>
+    </ion-content>
+
+
+    <ion-footer-bar>
+        <button class="button button-icon" ng-click="newsContentFontSize()"><span class="font-a">A</span>字号</button>
+
+
+        <button class="button button-icon"  ng-class="{'ion-android-star':is_collect,'ion-android-star-outline':!is_collect}" ng-click="newsContentCollect(item.aid)">收藏</button>
+    </ion-footer-bar>
+
+
+
+
+
+</ion-view>

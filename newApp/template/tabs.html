@@ -1,0 +1,44 @@
+<!--
+tabs-icon-top
+
+tabs-颜色值
+
+tabs-color-颜色值
+
+
+tabs-item-hide  隐藏底部
+-->
+
+<ion-tabs class="tabs-icon-top tabs-color-active-positive {{hideTab}}">
+
+    <!--
+    title 设置tab的标题
+
+    icon-on选中的图标
+
+    icon-off 没有选中的时候的图标
+
+    href 这个tab要跳转到哪里  也就是跳转路由
+
+    ion-nav-view 点击tab 让模板加载到这个 tab对应的视图
+
+     -->
+    <ion-tab title="首页" icon-off="ion-home" icon-on="ion-home" href="#/tab/home">
+        <ion-nav-view name="tab-home"></ion-nav-view>
+    </ion-tab>
+
+
+    <ion-tab title="新闻"  icon-off="ion-help-buoy" icon-on="ion-help-buoy"  href="#/tab/news">
+        <ion-nav-view name="tab-news"></ion-nav-view>
+    </ion-tab>
+
+
+    <ion-tab title="我的"  icon-off="ion-person" icon-on="ion-person"  href="#/tab/user">
+        <ion-nav-view name="tab-user"></ion-nav-view>
+    </ion-tab>
+
+
+
+
+</ion-tabs>
+

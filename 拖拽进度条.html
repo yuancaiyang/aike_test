@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title></title>
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"/>
+    <style>
+        div, input{
+            margin:0px;
+            padding:0px;
+        }
+        body{
+            height:500px;
+            font-size:62.5%;
+        }
+        #box{
+            display:flex;
+            align-items:center;
+            width:80%;
+            height:40px;
+            border:1px solid #ddd;
+            margin:50px auto 0;
+            position:relative;
+        }
+        #number{
+            width:50px;
+            height:30px;
+            font-size:16px;
+            line-height:2em;
+            text-align:center;
+            margin:0 10px;
+            display:block;
+            border-radius:10px;
+            box-sizing:border-box;
+            outline:none;
+            border:1px solid #ddd;
+        }
+        #bg{
+            flex:3;
+            height:25px;
+            border:1px solid #ddd;
+            overflow:hidden;
+            border-radius:5px;
+        }
+        #bgColor{
+            background:#ea2000;
+            width:0;
+            height:25px;
+        }
+        #btn{
+            width:1px;
+            height:25px;
+            border-radius:17px;
+            overflow:hidden;
+            position:absolute;
+            left:1px;
+            top:8px;
+            cursor:pointer;
+            background-color:#000;
+            opacity:0;
+        }
+    </style>
+</head>
+<body>
+<div id="box">
+    <div id="bg">
+        <div id="bgColor"></div>
+    </div>
+    <div id="btn"></div>
+    <input id="number" type="number">
+</div>
+<script>
+    // 获取节点
+    var btn = document.getElementById("btn");
+    var box = document.getElementById('box');
+    var bg = document.getElementById('bg');
+    var bgColor = document.getElementById('bgColor');
+    var number = document.getElementById('number');
+    var oW, oH;
+    // 绑定touchstart事件
+    number.value = '0'; //给input框赋初始值
+    bg.addEventListener("touchstart", function(e){
+        //        console.log(e);
+        //        console.log(bg.offsetWidth);
+        var touches = e.touches[0];
+        oW = touches.clientX - btn.offsetLeft; //点击位置到目标边框的水平距离
+        //      oH = touches.clientY - btn.offsetTop; //点击位置到目标边框的垂直距离
+        oH = btn.offsetTop; //保证水平位移垂直方向不变
+        //阻止页面的滑动默认事件
+        document.addEventListener("touchmove", defaultEvent, false);
+    }, false);
+
+    bg.addEventListener("touchmove", function(e){
+        var touches = e.touches[0];
+        var oLeft = touches.clientX - oW;
+        var oTop = oH;
+        if(oLeft < 0){
+            oLeft = 0;
+        } else if(oLeft >= bg.offsetWidth){
+            oLeft = bg.offsetWidth;
+        }
+        btn.style.left = oLeft + "px";
+        btn.style.top = oTop + "px";
+        bgColor.style.width = oLeft + 'px';//给对象添加宽度实现效果
+        var lang = Math.round((oLeft / bg.offsetWidth) * 100);
+        //        console.log(long);
+        number.value = parseInt(lang);//给input框赋值
+    }, false);
+
+    bg.addEventListener("touchend", function(){
+        document.removeEventListener("touchmove", defaultEvent, false);
+    }, false);
+
+    function defaultEvent(e){
+        e.preventDefault();
+    }
+
+    //input输入框跳转进度
+    number.onblur = function(){
+        if(number.value == ''){
+            return false;
+        } else if(number.value != ''){
+            bgColor.style.width = parseInt((number.value*bg.offsetWidth)/100) + 'px';
+        }
+    }
+</script>
+</body>
+</html>

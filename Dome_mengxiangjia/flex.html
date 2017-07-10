@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>flex</title>
+    <style>
+        .box{
+            width: 500px;
+            height: 500px;
+            border: 1px solid #000;
+            margin:100px 100px;
+            display:flex;
+            /*flex-flow: column;*/
+            /*flex-wrap: wrap;*/
+            align-items: center;
+            /*align-content: center;*/
+            justify-content: center;
+            /*justify-items: center;*/
+            position: relative;
+        }
+        .b{
+            /*flex:3;*/
+            width: 100px;
+            height: 100px;
+            background: red;
+        }
+        .b2{
+
+            /*flex:1;*/
+            width: 60PX;
+            height: 60px;
+            background: green;
+        }
+        /*.b3{*/
+            /*!*flex:5;*!*/
+            /*width: 20%;*/
+            /*height: 60px;*/
+            /*background: orange;*/
+        /*}*/
+
+
+        .box:before{
+            position:absolute;
+            display: inline-block;
+            border-top:10px solid transparent;
+            border-left:10px solid #000;
+            border-bottom:10px solid transparent;
+            right:-10px;
+            top:21px;
+            content:'';
+        }
+        .box:after{
+            position:absolute;
+            display: inline-block;
+            border-top:10px solid transparent;
+            border-left:10px solid #fff;
+            border-bottom:10px solid transparent;
+            right:-8px;
+            top:21px;
+            content:'';
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        
+        <div class="b"></div>
+        <span class="b2"></span>
+        <!--<a class="b3"></a>-->
+
+    </div>
+</body>
+</html>
