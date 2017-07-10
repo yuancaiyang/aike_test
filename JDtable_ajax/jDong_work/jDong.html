@@ -1,0 +1,337 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="Generator" content="EditPlus®">
+    <meta name="Author" content="">
+    <meta name="Keywords" content="">
+    <meta name="Description" content="">
+    <title>Document</title>
+    <script src="jquery-3.1.0.min.js"></script>
+    <style>
+        *{
+            margin:0;
+            padding:0;
+        }
+        a{
+            text-decoration:none;
+            color:white;
+        }
+        i{
+            font-style:normal;
+        }
+        .container{
+            width:1200px;
+
+            margin:0 auto;
+        }
+        .big{
+            position:relative;
+        }
+        ul{
+            list-style:none;
+        }
+        .dirs{
+            width:270px;
+            background-color:#b61d1d;
+            border:1px solid #b61d1d;
+            border-right:none;
+        }
+        .contents{
+            position:absolute;
+            width:930px;
+            height:560px;
+            background-color:#ccc;
+            left:270px;
+            top:0;
+            /*text-align:center;*/
+            /* display:none; */
+        }
+        ul li{
+            position:relative;
+        }
+        ul li a{
+            display:block;
+            line-height:40px;
+            margin-left:10px;
+        }
+        ul li i{
+            position:absolute;
+            top:0; right:10px;
+            line-height:40px;
+            color:white;
+        }
+        .box{
+            height:600px;
+            display:none;
+        }
+        .box.active{
+            display:block;
+        }
+        .box p{
+            padding-top:10px;
+            margin-left:20px;
+            margin-bottom:20px;
+        }
+        .box p span{
+            display:inline-block;
+            color:#fff;
+            background:darkred;
+            font-size:12px;
+            padding:5px;
+            margin-right:10px;
+        }
+        .box dl{
+            display:block;
+            height:48px;
+            width:930px;
+            font-size:12px;
+            /*border:1px solid #000;*/
+        }
+        .box dl dt{
+            width:60px;
+            height:48px;
+            margin-left:20px;
+            float:left;
+        }
+        .box dl dd{
+            width:840px;
+            height:48px;
+            line-height:16px;
+            /*margin-left:20px;*/
+            float:right;
+        }
+        .box dl dd span{
+            display:inline-block;
+            padding-right:15px;
+        }
+
+    </style>
+    <script>
+        window.onload = function(){
+            //document.querySelector("选择器");       //返回单个节点对象  IE8以下有兼容性问题
+            //document.querySelectorAll("选择器");    //返回一组节点对象   IE8以下有兼容性问题
+
+            //var boxes = document.querySelectorAll(".box");
+            //var lis = document.querySelectorAll(".l .g");
+            var currentLi;  //当前的li节点对象
+            var currentBox; //当前的box节点对象
+            var lis = document.getElementsByTagName("li");   //获取所有分类列表项节点对象
+            var contents = document.getElementById("contents"); //表示所有box容器的 父节点对象
+            var boxes = contents.getElementsByTagName("div");   //获取所有box容器节点对象
+            var big = document.getElementById("big");  //大容器节点对象//为包裹两个div的大的div
+
+
+            for(var i = 0;i<lis.length;i++){
+                lis[i].index = i;  //先把当前的i的值给保存下来
+                lis[i].onmouseover = function(){
+                    //this 当前节点对象
+                    //先灭掉所有同级节点对象的背景色
+                    for(var j = 0;j<lis.length;j++){
+                        lis[j].style.backgroundColor = "#b61d1d"; //#b61d1d 褐红色的背景色
+                        lis[j].firstElementChild.style.color = "white";
+
+                        boxes[j].style.display = "none";
+                    }
+                    this.style.backgroundColor = "white";
+                    var a = this.firstElementChild;   //当前节点下的第一个Element类型子节点
+                    a.style.color = "#b61d1d";
+
+                    //关键点：索引
+                    var num = this.index;
+                    currentLi = this;
+                    currentBox=boxes[num];
+                    boxes[num].style.display = "block";
+                }
+            }
+
+
+            /*
+             onmouseleave 和 onmouseout 区别
+             onmouseleave 会阻止事件冒泡！
+             */
+
+            /*
+             big.onmouseleave = function(){						//鼠标离开整个div(左右两边的div合在一起)时
+             currentLi.style.backgroundColor = "#ccc"
+             currentLi.firstElementChild.style.color = "while"	//currentLi.firstElementChild是a标签
+             currentBox.style.display = "none"            //li对应div的display为none
+             }
+
+             */
+            big.onmouseleave = function(){
+
+
+//			currentLi.style.backgroundColor ="#b61d1d";
+                currentLi.firstElementChild.style.color = "#b61d1d";
+                currentBox.style.display = "none"
+            }
+        }
+    </script>
+
+
+
+</head>
+<body>
+<div class="container">
+    <div id="big" class="big">
+        <!--左侧分类列表-->
+        <div class="dirs">
+            <ul>
+                <li><a href="#">家用电器01</a><i>&gt;</i></li>
+                <li><a href="#">家用电器02</a><i>&gt;</i></li>
+                <li><a href="#">家用电器03</a><i>&gt;</i></li>
+                <li><a href="#">家用电器04</a><i>&gt;</i></li>
+                <li><a href="#">家用电器05</a><i>&gt;</i></li>
+                <li><a href="#">家用电器06</a><i>&gt;</i></li>
+                <li><a href="#">家用电器07</a><i>&gt;</i></li>
+                <li><a href="#">家用电器08</a><i>&gt;</i></li>
+                <li><a href="#">家用电器09</a><i>&gt;</i></li>
+                <li><a href="#">家用电器10</a><i>&gt;</i></li>
+                <li><a href="#">家用电器11</a><i>&gt;</i></li>
+                <li><a href="#">家用电器12</a><i>&gt;</i></li>
+                <li><a href="#">家用电器13</a><i>&gt;</i></li>
+                <li><a href="#">家用电器14</a><i>&gt;</i></li>
+
+            </ul>
+        </div>
+
+        <!--右侧内容-->
+        <div id="contents" class="contents">
+            <div class="box active">
+            </div>
+            <div class="box">
+            </div>
+            <div class="box">
+            </div>
+            <div class="box">
+
+            </div>
+            <div class="box">
+
+            </div>
+            <div class="box">
+
+            </div>
+            <div class="box">
+
+            </div>
+            <div class="box">
+
+            </div>
+            <div class="box">
+
+            </div>
+            <div class="box">
+
+            </div>
+            <div class="box">
+
+            </div>
+            <div class="box">
+
+            </div>
+            <div class="box">
+
+            </div>
+            <div class="box">
+
+            </div>
+
+
+        </div>
+    </div>
+</div>
+</body>
+</html>
+<script>
+    var $box0=$('.box0');
+    $(function(){
+        $.ajax({
+            'url':'http://dc.3.cn/category/get?cb=getCategoryCallback',
+            'dataType':'jsonp',
+            'jsonp':'callback',
+            'scriptCharset':'gb2312',
+            'success':function(data){
+                var d = data.data; //d是长度为14数组
+                console.log(d);
+//                var s = d[0].s[0].s[0].s[0].n.split('|')[1];
+                //第一个
+//                console.log(d[0]);
+
+
+
+                $.each(d, function (id,el) {
+
+                    var _html='';
+                        _html+='<p>';
+                    $.each(d[id].t, function (idx,ele) {
+//                    console.log(ele);
+//                    console.log(ele.split('|')[1]);
+                        _html+='<span>'+ele.split('|')[1]+'</span>';
+                    });
+                        _html+='</p>';
+                    $('.box').eq(id).append(_html);
+
+                    var dl='';
+                        dl+='<dl>';
+                    $.each(d[id].s[0].s, function (idx,ele) {
+//                    console.log(d[0].s[0].s);
+//                    console.log(ele);
+                        dl+='<dt>'+ele.n.split('|')[1]+'</dt>';
+                        dl+='<dd>';
+                        $.each(d[id].s[0].s[idx].s, function (i,e) { //注意ele的使用
+//                        console.log(e);
+                            dl+='<span>'+e.n.split('|')[1]+'</span>';
+                        });
+                        dl+='</dd>';
+                    });
+                    dl+='</dl>';
+                    $('.box').eq(id).append(dl);
+
+                });
+
+
+                //副本  没有加入id
+//                $.each(d, function (id,el) {
+//
+//                    var _html='';
+//                    $.each(d[0].t, function (idx,ele) {
+////                    console.log(ele);
+////                    console.log(ele.split('|')[1]);
+//                        _html+='<span>'+ele.split('|')[1]+'</span>';
+//                    });
+//                    $('.box').eq(0).append(_html);
+//                    var dl='';
+//                    var dt='';
+//                    dl+='<dl>';
+//                    $.each(d[0].s[0].s, function (idx,ele) {
+////                    console.log(d[0].s[0].s);
+////                    console.log(ele);
+//                        dl+='<dt>'+ele.n.split('|')[1]+'</dt>';
+//                        dl+='<dd>';
+//                        $.each(d[0].s[0].s[idx].s, function (i,e) { //注意ele的使用
+////                        console.log(e);
+//                            dl+='<span>'+e.n.split('|')[1]+'</span>';
+//                        });
+//                        dl+='</dd>';
+//                    });
+//                    dl+='</dl>';
+//                    $('.box').eq(0).append(dl);
+//
+//                });
+
+
+
+
+
+            }
+        })
+    })
+
+
+
+
+
+
+</script>
